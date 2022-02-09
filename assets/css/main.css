@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply font-medium py-[10px] px-4 text-sm transition duration-300 ease-linear tracking-wider focus:outline-none;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-light disabled:bg-primary disabled:bg-opacity-50 disabled:cursor-not-allowed active:bg-primary focus:shadow-outline-primary;
+  }
+
+  .btn-secondary {
+    @apply border border-border-btn text-secondary-text hover:bg-gray-200/10 disabled:cursor-not-allowed focus:shadow-outline-primary;
+  }
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.2s ease-in-out;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateX(-5px);
+}
+
+.table-wrapper {
+  @apply block w-full shadow-table overflow-x-auto;
+}
+.table {
+  @apply w-full border-collapse;
+}
+.table-head {
+  @apply py-4 px-6 bg-white text-light-text text-xs font-medium border-b border-l-0 border-r-0 whitespace-nowrap text-left;
+}
+.table-row {
+  @apply bg-white odd:bg-grey;
+}
+.table-item {
+  @apply align-middle text-sm py-4 px-6 whitespace-nowrap;
+}
